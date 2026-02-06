@@ -9,15 +9,16 @@
     <h1>Resinova PDF</h1>
 
     <!-- View PDF in browser -->
-    <iframe src="https://raw.githubusercontent.com/username/repo/main/resinova.pdf" width="100%" height="600px">
+    < src="https://raw.githubusercontent.com/username/repo/main/resinova.pdf" width="100%" height="600px">
         This browser does not support PDFs. Please download it to view.
     </iframe>
 
     <br><br>
     
     <!-- Download PDF -->
-    <a href="https://raw.githubusercontent.com/username/repo/main/resinova.pdf" download="resinova.pdf">
+    <="https://raw.githubusercontent.com/username/repo/main/resinova.pdf" download="resinova.pdf">
         ⬇️ Download Resinova PDF
     </a>
 </body>
 </html>
+
