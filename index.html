@@ -4,156 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resinova Jewelry</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg,#fff6f2,#fff0f6);
-  color: #4b2e2e;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-header {
-  padding: 40px 20px;
-  background: linear-gradient(135deg,#fbd3c1,#f8a9c4);
-  border-radius: 0 0 35px 35px;
-}
-
-header img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #f2e5e5;
-  background: white;
-  padding: 5px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin: 10px 0;
-  position: relative;
-}
-header h1::after {
-  content: '✨';
-  position: absolute;
-  right: -25px;
-  animation: twinkle 2s infinite;
-}
-@keyframes twinkle {0%,100%{opacity:1;}50%{opacity:0.5;}}
-
-header p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.category-btn {
-  display: inline-block;
-  background: linear-gradient(45deg,#e85a8b,#ff6fbf);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  font-weight: 600;
-  position: relative;
-  transition: 0.3s;
-}
-.category-btn:hover {
-  transform: scale(1.05);
-}
-.category-btn::after {
-  content: '✨';
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  font-size: 1.2em;
-  animation: twinkle 2s infinite;
-}
-
-.products {
-  display: none;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.product {
-  width: 260px;
-  background: #fff0f6;
-  border-radius: 25px;
-  padding: 15px;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-  position: relative;
-  transition: transform 0.3s;
-}
-.product:hover { transform: translateY(-5px) scale(1.03); }
-
-.product img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-.product h3 {
-  color: #e85a8b;
-  margin-bottom: 10px;
-}
-
-.product p {
-  font-size: 0.95em;
-  color: #4b2e2e;
-  line-height: 1.3;
-}
-
-.product a {
-  display: inline-block;
-  margin-top: 10px;
-  background: linear-gradient(45deg,#e85a8b,#ff6fbf);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-  position: relative;
-}
-.product a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ff6fbf;
-}
-.product a::after {
-  content: '✨';
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  animation: twinkle 2s infinite;
-}
-</style>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Header -->
 <header>
-  <img src="images/image.jpg" alt="Resinova Logo">
+  <img src="image.jpg" alt="Resinova Logo" class="product-img">
   <h1>Resinova Jewelry</h1>
   <p>Handmade resin art crafted with love & care to make you shine 💖</p>
 </header>
 
-<section>
-  <h2>Categories</h2>
-  <div class="category-btn" onclick="toggleDeals()">Material Deals</div>
+<!-- Hero -->
+<div class="hero">
+  <h2>Elegant & Unique Handmade Jewelry</h2>
+  <p>Discover our full collection of handcrafted resin pieces 💎✨</p>
+  <a href="https://wa.me/c/923276132020" target="_blank">View WhatsApp Catalog 💖</a>
+</div>
 
-  <div class="products" id="material-deals">
+<!-- Material Deals -->
+<section>
+  <h2>Material Deals</h2>
+  <div class="products">
+
     <!-- Basic Deal -->
     <div class="product">
       <h3>Basic Deal</h3>
       <p><strong>Rs 4,400.00</strong> <span style="text-decoration: line-through;">Rs 5,400.00</span></p>
       <p>3 sheets, heat gun and color sheet</p>
-      <img src="images/basic-deal.jpg" alt="Basic Deal">
+      <img src="images/basic-deal.jpg" alt="Basic Deal" class="product-img">
       <a href="https://wa.me/923276132020?text=Hi! I’d like to order: Basic Deal — Rs 4,400.00" target="_blank">Order on WhatsApp 💬</a>
     </div>
 
@@ -162,7 +41,7 @@ header p {
       <h3>Full Deal</h3>
       <p><strong>Rs 5,400.00</strong> <span style="text-decoration: line-through;">Rs 7,000.00</span></p>
       <p>3 sheets, heat gun, colour kit, double sided ball pins, eyepins pack, 10 bracelet wires ready to use, 3 chain ready to wear and jump rings pack</p>
-      <img src="images/full-deal.jpg" alt="Full Deal">
+      <img src="images/full-deal.jpg" alt="Full Deal" class="product-img">
       <a href="https://wa.me/923276132020?text=Hi! I’d like to order: Full Deal — Rs 5,400.00" target="_blank">Order on WhatsApp 💬</a>
     </div>
 
@@ -171,22 +50,19 @@ header p {
       <h3>Advanced Deal</h3>
       <p><strong>Rs 7,500.00</strong> <span style="text-decoration: line-through;">Rs 9,000.00</span></p>
       <p>3 sheets, heat gun, colour kit, double sided ball pins, eye pins pack, 10 bracelet wires ready to use, 3 chain ready to wear and golden jump rings pack, silver jump rings pack, earring hooks, blade cutter, flat nose pliers, wire cutter, hand drill machine, 2 beads ki lari</p>
-      <img src="images/advanced-deal.jpg" alt="Advanced Deal">
+      <img src="images/advanced-deal.jpg" alt="Advanced Deal" class="product-img">
       <a href="https://wa.me/923276132020?text=Hi! I’d like to order: Advanced Deal — Rs 7,500.00" target="_blank">Order on WhatsApp 💬</a>
     </div>
+
   </div>
 </section>
 
-<script>
-function toggleDeals() {
-  var deals = document.getElementById('material-deals');
-  if (deals.style.display === 'flex') {
-    deals.style.display = 'none';
-  } else {
-    deals.style.display = 'flex';
-  }
-}
-</script>
+<!-- Contact -->
+<section>
+  <h2>Contact Us</h2>
+  <p>📞 WhatsApp: +92 327 6132020</p>
+  <a href="https://wa.me/923276132020" target="_blank">Chat on WhatsApp 💬</a>
+</section>
 
 </body>
 </html>
