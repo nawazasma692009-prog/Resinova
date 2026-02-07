@@ -4,65 +4,223 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resinova Jewelry</title>
-<link href="style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* Base */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(135deg,#fff6f2,#fff0f6);color:#4b2e2e;line-height:1.6;overflow-x:hidden;position:relative;scroll-behavior:smooth;}
+
+/* Fade-up animation */
+.fade-up{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* Floating particles */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none; z-index:0;}
+.particle{position:absolute;background:#FFD700;width:4px;height:4px;border-radius:50%;opacity:0.8; animation:float 10s linear infinite;}
+@keyframes float{0%{transform:translateY(0px) translateX(0px);}50%{transform:translateY(-50px) translateX(20px);}100%{transform:translateY(0px) translateX(-20px);}}
+
+/* Logo */
+.logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    display: block;
+    border: 3px solid #f2e5e5;
+    background: white;
+    padding: 5px;
+}
+
+/* Header */
+header{background:linear-gradient(135deg,#fbd3c1,#f8a9c4);padding:50px 20px;text-align:center;border-radius:0 0 35px 35px;position:relative; z-index:1;}
+header h1{font-size:2.8em;color:#5c3a21;position:relative;display:inline-block; cursor:pointer;}
+header h1::after{content:'✨';position:absolute;right:-25px;animation:twinkle 2s infinite;}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.2);}}
+
+/* Hero */
+.hero{background:linear-gradient(-45deg,#fce8f0,#fff0f6,#ffe1ec,#fff0f6);background-size:400% 400%;animation:gradientBG 15s ease infinite;padding:40px 20px;border-radius:25px;margin:30px auto;max-width:1000px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.12);position:relative; z-index:1;}
+@keyframes gradientBG{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.hero h2{font-size:2.5em;color:#e85a8b;margin-bottom:15px;transition:all 0.3s; letter-spacing:1px; position:relative;}
+.hero h2:hover{transform:scale(1.05);color:#c94873;}
+.hero h2::after{content:"✨";position:absolute;top:-5px;right:-15px;font-size:1.2em;opacity:0;transition:0.3s; animation:twinkle 2s infinite;}
+.hero h2:hover::after{opacity:1;}
+.hero p{font-size:1.15em;color:#5c3a21;margin-bottom:20px;}
+
+/* WhatsApp Catalog Top Button */
+.hero .catalog-top{display:inline-block;background:linear-gradient(45deg,#e85a8b,#ff6fbf);color:white;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:600;transition:0.3s;position:relative;}
+.hero .catalog-top:hover{box-shadow:0 0 20px #ff6fbf; transform:scale(1.07);}
+.hero .catalog-top::after{content:"✨";position:absolute;top:-5px;right:-10px;font-size:1.2em;animation:twinkle 2s infinite;}
+
+/* Sections */
+section{padding:50px 20px;text-align:center;max-width:1000px;margin:auto;position:relative; z-index:1;}
+section h2{margin-bottom:25px;font-size:2em;color:#5c3a21;}
+
+/* Categories */
+.categories{display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-bottom:40px;}
+.category{background:#ffe1ec; padding:12px 25px; border-radius:30px; font-weight:500; box-shadow:0 5px 12px rgba(0,0,0,0.12); cursor:pointer; transition:0.3s; letter-spacing:0.5px;}
+.category:hover{transform:translateY(-5px); background:#ffc0de;}
+
+/* Products */
+.products{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin-top:20px;}
+.product{background:white; padding:25px; border-radius:25px; box-shadow:0 12px 25px rgba(0,0,0,0.12); transition:all 0.4s; position:relative; overflow:hidden;}
+.product:hover{transform:translateY(-10px) scale(1.04); box-shadow:0 20px 35px rgba(0,0,0,0.15);}
+.product h3{color:#e85a8b; margin-bottom:10px; font-size:1.35em;}
+.product p{color:#5c3a21; font-size:1em; line-height:1.4;}
+.product a{display:inline-block; margin-top:15px; background:linear-gradient(45deg,#e85a8b,#ff6fbf); color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; position:relative; letter-spacing:0.5px;}
+.product a:hover{box-shadow:0 0 18px #ff6fbf; transform:scale(1.07);}
+.product a::after{content:"✨";position:absolute;top:-5px;right:-10px;font-size:1.2em;animation:twinkle 2s infinite;}
+
+/* Product Hover Sparkles */
+.product .hover-sparkle{position:absolute;width:6px;height:6px;background:gold;border-radius:50%;opacity:0; pointer-events:none;}
+.product:hover .hover-sparkle{opacity:1; animation:float 3s linear infinite;}
+
+/* Catalog */
+.catalog{background:#fff0f6; padding:45px; border-radius:25px; margin-top:30px; box-shadow:0 12px 25px rgba(0,0,0,0.12);}
+.catalog a{display:inline-block; margin-top:15px; background:linear-gradient(45deg,#e85a8b,#ff6fbf); color:white; padding:12px 30px; border-radius:30px; text-decoration:none; transition:0.3s; position:relative; font-weight:600;}
+.catalog a:hover{box-shadow:0 0 18px #ff6fbf; transform:scale(1.07);}
+.catalog a::after{content:"✨";position:absolute;top:-5px;right:-10px;font-size:1.2em;animation:twinkle 2s infinite;}
+
+/* Contact */
+.contact-box{background:white; padding:35px; border-radius:25px; box-shadow:0 12px 25px rgba(0,0,0,0.12); max-width:500px; margin:auto;}
+.contact-box p{margin:10px 0; font-size:1.15em;}
+.contact-box a{display:inline-block; margin-top:15px; background:#25D366; color:white; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s;}
+.contact-box a:hover{background:#1ebe5d; transform:scale(1.07);}
+
+/* Floating WhatsApp */
+.whatsapp-float{position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:14px 18px; border-radius:50px; text-decoration:none; font-size:16px; box-shadow:0 8px 18px rgba(0,0,0,0.3); z-index:1001;}
+.whatsapp-float:hover{background:#1ebe5d; transform:scale(1.07);}
+
+/* Footer */
+footer{background:#4b2e2e; color:white; text-align:center; padding:20px; margin-top:50px; border-radius:20px 20px 0 0;}
+footer a{color:#ffd6e7; text-decoration:none; margin:0 8px; transition:0.3s;}
+footer a:hover{color:white;}
+</style>
 </head>
 <body>
 
+<!-- Floating Particles -->
+<div id="particles"></div>
+
 <!-- Header -->
-<header>
-  <img src="image.jpg" alt="Resinova Logo" class="product-img">
-  <h1>Resinova Jewelry</h1>
-  <p>Handmade resin art crafted with love & care to make you shine 💖</p>
+<header class="fade-up">
+  <img src="image.jpg" alt="Resinova Logo" class="logo">
+  <h1>Resinova Jewelry</h1>
+  <p>Handmade resin art crafted with love & care to make you shine 💖</p>
 </header>
 
 <!-- Hero -->
-<div class="hero">
-  <h2>Elegant & Unique Handmade Jewelry</h2>
-  <p>Discover our full collection of handcrafted resin pieces 💎✨</p>
-  <a href="https://wa.me/c/923276132020" target="_blank">View WhatsApp Catalog 💖</a>
+<div class="hero fade-up">
+  <h2>Elegant & Unique Handmade Jewelry</h2>
+  <p>Discover our full collection of handcrafted resin pieces 💎✨</p>
+  <a href="https://wa.me/c/923276132020" class="catalog-top" target="_blank">View WhatsApp Catalog 💖</a>
 </div>
 
-<!-- Material Deals -->
-<section>
-  <h2>Material Deals</h2>
-  <div class="products">
+<!-- Categories -->
+<section class="fade-up">
+  <h2>Categories</h2>
+  <div class="categories">
+    <div class="category" onclick="filterAndScroll('all')">All</div>
+    <div class="category" onclick="filterAndScroll('ring')">💍 Rings</div>
+    <div class="category" onclick="filterAndScroll('earring')">✨ Earrings</div>
+    <div class="category" onclick="filterAndScroll('keychain')">🔑 Keychains</div>
+    <div class="category" onclick="filterAndScroll('decor')">🏠 Home Decor</div>
+  </div>
+</section>
 
-    <!-- Basic Deal -->
-    <div class="product">
-      <h3>Basic Deal</h3>
-      <p><strong>Rs 4,400.00</strong> <span style="text-decoration: line-through;">Rs 5,400.00</span></p>
-      <p>3 sheets, heat gun and color sheet</p>
-      <img src="images/basic-deal.jpg" alt="Basic Deal" class="product-img">
-      <a href="https://wa.me/923276132020?text=Hi! I’d like to order: Basic Deal — Rs 4,400.00" target="_blank">Order on WhatsApp 💬</a>
-    </div>
+<!-- Products -->
+<section class="fade-up">
+  <h2>Our Collection</h2>
+  <div class="products">
+    <div class="product ring">
+      <h3>Floral Resin Ring</h3>
+      <p>Delicate handmade ring with real flowers inside resin. Perfect for gifts or daily wear.</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
+      <div class="hover-sparkle" style="top:10%; left:20%;"></div>
+      <div class="hover-sparkle" style="top:50%; left:80%;"></div>
+    </div>
+    <div class="product earring">
+      <h3>Crystal Earrings</h3>
+      <p>Elegant earrings crafted from resin and crystal accents. Adds sparkle to your look.</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
+      <div class="hover-sparkle" style="top:20%; left:30%;"></div>
+    </div>
+    <div class="product keychain">
+      <h3>Custom Keychain</h3>
+      <p>Personalized keychains made with love. Great gift for loved ones or yourself!</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
+      <div class="hover-sparkle" style="top:15%; left:25%;"></div>
+    </div>
+    <div class="product decor">
+      <h3>Resin Home Decor</h3>
+      <p>Beautiful resin decorations for home, unique and handcrafted with care.</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
+      <div class="hover-sparkle" style="top:10%; left:60%;"></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Full Deal -->
-    <div class="product">
-      <h3>Full Deal</h3>
-      <p><strong>Rs 5,400.00</strong> <span style="text-decoration: line-through;">Rs 7,000.00</span></p>
-      <p>3 sheets, heat gun, colour kit, double sided ball pins, eyepins pack, 10 bracelet wires ready to use, 3 chain ready to wear and jump rings pack</p>
-      <img src="images/full-deal.jpg" alt="Full Deal" class="product-img">
-      <a href="https://wa.me/923276132020?text=Hi! I’d like to order: Full Deal — Rs 5,400.00" target="_blank">Order on WhatsApp 💬</a>
-    </div>
-
-    <!-- Advanced Deal -->
-    <div class="product">
-      <h3>Advanced Deal</h3>
-      <p><strong>Rs 7,500.00</strong> <span style="text-decoration: line-through;">Rs 9,000.00</span></p>
-      <p>3 sheets, heat gun, colour kit, double sided ball pins, eye pins pack, 10 bracelet wires ready to use, 3 chain ready to wear and golden jump rings pack, silver jump rings pack, earring hooks, blade cutter, flat nose pliers, wire cutter, hand drill machine, 2 beads ki lari</p>
-      <img src="images/advanced-deal.jpg" alt="Advanced Deal" class="product-img">
-      <a href="https://wa.me/923276132020?text=Hi! I’d like to order: Advanced Deal — Rs 7,500.00" target="_blank">Order on WhatsApp 💬</a>
-    </div>
-
-  </div>
+<!-- Catalog -->
+<section class="fade-up" id="catalog-section">
+  <h2>Resinova Catalog 📘</h2>
+  <div class="catalog">
+    <p>Explore our complete handmade collection. Each piece is unique and carefully crafted 💖</p>
+    <a href="https://wa.me/c/923276132020" target="_blank">Open WhatsApp Catalog</a>
+  </div>
 </section>
 
 <!-- Contact -->
-<section>
-  <h2>Contact Us</h2>
-  <p>📞 WhatsApp: +92 327 6132020</p>
-  <a href="https://wa.me/923276132020" target="_blank">Chat on WhatsApp 💬</a>
+<section class="fade-up">
+  <h2>Contact Us</h2>
+  <div class="contact-box">
+    <p>📞 WhatsApp: +92 327 6132020</p>
+    <a href="https://wa.me/923276132020" target="_blank">Chat on WhatsApp 💬</a>
+  </div>
 </section>
 
+<footer>
+  <p>© 2026 Resinova Jewelry</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/923276132020" target="_blank">💬 Chat</a>
+
+<script>
+// Combined function: filter products + scroll to catalog
+function filterAndScroll(category){
+  let products=document.querySelectorAll('.product');
+  products.forEach(p=>{
+    if(category=='all'){p.style.display='block';}
+    else if(p.classList.contains(category)){p.style.display='block';}
+    else{p.style.display='none';}
+  });
+  const catalog = document.getElementById('catalog-section');
+  catalog.scrollIntoView({behavior:'smooth'});
+}
+
+// Fade-up on scroll
+const fadeElements=document.querySelectorAll('.fade-up');
+window.addEventListener('scroll',()=>{
+  fadeElements.forEach(el=>{
+    const top=el.getBoundingClientRect().top;
+    const windowHeight=window.innerHeight;
+    if(top<windowHeight-50){el.classList.add('visible');}
+  });
+});
+
+// Floating particles
+const particlesContainer=document.getElementById('particles');
+for(let i=0;i<40;i++){
+  const particle=document.createElement('div');
+  particle.className='particle';
+  particle.style.left=Math.random()*100+'vw';
+  particle.style.top=Math.random()*100+'vh';
+  particle.style.animationDuration=5+Math.random()*5+'s';
+  particle.style.width=2+Math.random()*4+'px';
+  particle.style.height=2+Math.random()*4+'px';
+  particlesContainer.appendChild(particle);
+}
+</script>
+
 </body>
-</html>
+  </html>
