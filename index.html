@@ -1,152 +1,273 @@
-<header>
-  <h1>Welcome to Resinova Jewelry ✨</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resinova Jewelry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+body{
+  background:#fff6f9;
+  color:#4a2c2a;
+}
+
+/* Animations */
+.fade-up{
+  animation: fadeUp 1s ease both;
+}
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Header */
+header{
+  background:linear-gradient(135deg,#fbd3c1,#f8a9c4);
+  padding:45px 20px;
+  text-align:center;
+  border-radius:0 0 35px 35px;
+}
+header h1{
+  font-size:2.6em;
+}
+header p{
+  margin-top:10px;
+}
+
+/* Section */
+section{
+  padding:55px 20px;
+  text-align:center;
+}
+section h2{
+  margin-bottom:30px;
+  font-size:2em;
+}
+
+/* Categories */
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+}
+.category{
+  background:#ffe1ec;
+  padding:12px 25px;
+  border-radius:30px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Products */
+.products{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.product{
+  background:white;
+  border-radius:20px;
+  padding:15px;
+  box-shadow:0 10px 18px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.product:hover{
+  transform:translateY(-8px);
+}
+.product img{
+  width:100%;
+  border-radius:15px;
+}
+.product h3{
+  margin:15px 0 5px;
+  color:#e85a8b;
+}
+.product p{
+  font-size:0.9em;
+}
+.product a{
+  display:inline-block;
+  margin-top:10px;
+  background:#e85a8b;
+  color:white;
+  padding:8px 20px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:0.9em;
+}
+
+/* Catalog */
+.catalog{
+  background:#fff0f6;
+  padding:45px;
+  border-radius:25px;
+  max-width:700px;
+  margin:auto;
+  box-shadow:0 10px 18px rgba(0,0,0,0.1);
+}
+.catalog a{
+  display:inline-block;
+  margin-top:20px;
+  background:#e85a8b;
+  color:white;
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* Instagram */
+.insta-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+}
+.insta-grid img{
+  width:100%;
+  border-radius:15px;
+  box-shadow:0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Contact */
+.contact-box{
+  background:white;
+  max-width:500px;
+  margin:auto;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 10px 18px rgba(0,0,0,0.1);
+}
+.contact-box p{
+  margin:10px 0;
+}
+.contact-box a{
+  display:inline-block;
+  margin-top:15px;
+  background:#25D366;
+  color:white;
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* Floating WhatsApp */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:16px;
+  box-shadow:0 8px 15px rgba(0,0,0,0.3);
+  z-index:1000;
+}
+
+/* Footer */
+footer{
+  background:#4a2c2a;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="fade-up">
+  <h1>Resinova Jewelry ✨</h1>
+  <p>Handmade resin art made with love 💕</p>
 </header>
-<section>
-  <h2>About Our Handmade Jewelry</h2>
-  <p>We create beautiful resin jewelry with love and care.</p>
-</section>
-<section>
-  <h2>Our Collection</h2>
-  <img src="images/product1.jpg" alt="Product 1">
-  <!-- add more images -->
-</section>
-<footer>
-  <p>Contact: email@example.com</p>
-</footer>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resinova Jewelry</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Resinova Jewelry</h1>
-    <p>Handmade jewelry to make you shine ✨</p>
-  </header>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resinova PDF</title>
-</head>
-<body>
-    <h1>Resinova PDF</h1>
 
-    <!-- View PDF in browser -->
-    <iframe src="https://raw.githubusercontent.com/username/repo/main/resinova.pdf" width="100%" height="600px">
-        This browser does not support PDFs. Please download it to view.
-    </iframe>
-
-    <br><br>
-    
-    <!-- Download PDF -->
-    <a href="https://raw.githubusercontent.com/username/repo/main/resinova.pdf" download="resinova.pdf">
-        ⬇️ Download Resinova PDF
-    </a>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resinova</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-    body { line-height: 1.6; background: #fdfaf6; color: #333; }
-    header { background: #f8d49d; padding: 20px; text-align: center; }
-    header h1 { font-size: 2.5em; color: #5c3a21; }
-    nav { margin-top: 10px; }
-    nav a { text-decoration: none; color: #5c3a21; margin: 0 15px; font-weight: 600; transition: color 0.3s; }
-    nav a:hover { color: #e07b39; }
-
-    .hero { display: flex; align-items: center; justify-content: center; height: 60vh; background: url('https://source.unsplash.com/1600x900/?resin,jewelry') no-repeat center/cover; color: white; text-shadow: 1px 1px 4px #000; }
-    .hero h2 { font-size: 3em; }
-
-    section { padding: 60px 20px; text-align: center; }
-    section h2 { font-size: 2em; margin-bottom: 30px; color: #5c3a21; }
-    
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .product-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .product-card:hover { transform: translateY(-10px); }
-    .product-card img { width: 100%; border-radius: 10px; }
-    .product-card h3 { margin: 15px 0 10px; color: #e07b39; }
-    .product-card p { font-size: 0.9em; }
-
-    .contact form { display: flex; flex-direction: column; max-width: 500px; margin: auto; }
-    .contact input, .contact textarea { margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
-    .contact button { background: #e07b39; color: white; border: none; padding: 12px; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
-    .contact button:hover { background: #5c3a21; }
-
-    footer { background: #5c3a21; color: white; text-align: center; padding: 20px; }
-    footer a { color: #f8d49d; margin: 0 10px; text-decoration: none; }
-    footer a:hover { color: white; }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Resinova</h1>
-    <nav>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <h2>Handmade Resin Jewelry & Decor</h2>
+<section class="fade-up">
+  <h2>Categories</h2>
+  <div class="categories">
+    <div class="category">💍 Rings</div>
+    <div class="category">✨ Earrings</div>
+    <div class="category">🔑 Keychains</div>
+    <div class="category">🏠 Home Decor</div>
   </div>
+</section>
 
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="products">
-      <div class="product-card">
-        <img src="https://source.unsplash.com/300x300/?resin,jewelry" alt="Product 1">
-        <h3>Elegant Resin Ring</h3>
-        <p>Beautiful handcrafted ring with natural flowers embedded.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://source.unsplash.com/300x300/?resin,art" alt="Product 2">
-        <h3>Resin Coaster Set</h3>
-        <p>Vibrant resin coasters perfect for home decoration.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://source.unsplash.com/300x300/?resin,decor" alt="Product 3">
-        <h3>Resin Keychains</h3>
-        <p>Unique resin keychains to brighten your daily life.</p>
-      </div>
+<section class="fade-up">
+  <h2>Our Collection</h2>
+  <div class="products">
+    <div class="product">
+      <img src="images/product1.jpg">
+      <h3>Floral Resin Ring</h3>
+      <p>PKR 1,500</p>
+      <a href="https://wa.me/c/923276132020" target="_blank">View on WhatsApp</a>
     </div>
-  </section>
+    <div class="product">
+      <img src="images/product2.jpg">
+      <h3>Crystal Earrings</h3>
+      <p>PKR 2,000</p>
+      <a href="https://wa.me/c/923276132020" target="_blank">View on WhatsApp</a>
+    </div>
+    <div class="product">
+      <img src="images/product3.jpg">
+      <h3>Custom Keychain</h3>
+      <p>PKR 900</p>
+      <a href="https://wa.me/c/923276132020" target="_blank">View on WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-  <section id="about">
-    <h2>About Resinova</h2>
-    <p>Resinova creates beautiful handmade resin jewelry and decor with a passion for art and nature. Each piece is carefully crafted to bring elegance and joy to your everyday life.</p>
-  </section>
+<section class="fade-up">
+  <h2>Instagram Gallery 📸</h2>
+  <div class="insta-grid">
+    <img src="images/insta1.jpg">
+    <img src="images/insta2.jpg">
+    <img src="images/insta3.jpg">
+    <img src="images/insta4.jpg">
+  </div>
+</section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+<section class="fade-up">
+  <h2>Our Catalog 📘</h2>
+  <div class="catalog">
+    <p>Explore our full Resinova collection 💖</p>
+    <a href="https://wa.me/c/923276132020" target="_blank">Open WhatsApp Catalog</a>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 Resinova | Follow us on
-      <a href="#">Instagram</a> |
-      <a href="#">Facebook</a>
-    </p>
-  </footer>
+<section class="fade-up">
+  <h2>Contact Us</h2>
+  <div class="contact-box">
+    <p><strong>📞 WhatsApp:</strong></p>
+    <p>+92 327 6132020</p>
+    <a href="https://wa.me/923276132020" target="_blank">Chat on WhatsApp 💬</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Resinova Jewelry</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/923276132020" target="_blank">
+💬 Chat
+</a>
 
 </body>
-</html>
+      </html>
