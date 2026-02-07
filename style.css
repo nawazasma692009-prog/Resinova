@@ -10,10 +10,3 @@ h1 {
 p {
   font-size: 18px;
 }
-.product-img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 15px;
-    margin: 10px auto;
-    display: block;
-}
