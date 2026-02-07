@@ -4,259 +4,152 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resinova Jewelry</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-body{
-  background:#fff6f9;
-  color:#4a2c2a;
-}
+/* Base */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#fff7f2;color:#4b2e2e;line-height:1.6;overflow-x:hidden;}
 
-/* Animations */
-.fade-up{
-  animation: fadeUp 1s ease both;
-}
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+/* Fade-up animation */
+.fade-up{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* Hero background animation */
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 /* Header */
-header{
-  background:linear-gradient(135deg,#fbd3c1,#f8a9c4);
-  padding:45px 20px;
-  text-align:center;
-  border-radius:0 0 35px 35px;
-}
-header h1{
-  font-size:2.6em;
-}
-header p{
-  margin-top:10px;
-}
+header{background:linear-gradient(135deg,#fbd3c1,#f8a9c4);padding:50px 20px;text-align:center;border-radius:0 0 35px 35px;}
+header h1{font-size:2.8em;color:#5c3a21;position:relative;display:inline-block;}
+header h1::after{content:'✨';position:absolute;right:-25px;animation:twinkle 2s infinite;}
+header p{font-size:1.2em;margin-top:10px;color:#7a4c37;}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.2);}}
 
-/* Section */
-section{
-  padding:55px 20px;
-  text-align:center;
-}
-section h2{
-  margin-bottom:30px;
-  font-size:2em;
-}
+/* Hero */
+.hero{background:linear-gradient(-45deg,#fce8f0,#fff0f6,#ffe1ec,#fff0f6);background-size:400% 400%;animation:gradientBG 15s ease infinite;padding:40px 20px;border-radius:25px;margin:30px auto;max-width:1000px;text-align:center;box-shadow:0 10px 20px rgba(0,0,0,0.1);}
+.hero h2{font-size:2.4em;color:#e85a8b;margin-bottom:15px;transition:all 0.3s;}
+.hero h2:hover{transform:scale(1.05);color:#c94873;}
+.hero p{font-size:1.1em;color:#5c3a21;}
+
+/* Sections */
+section{padding:50px 20px;text-align:center;max-width:1000px;margin:auto;}
+section h2{margin-bottom:25px;font-size:2em;color:#5c3a21;}
 
 /* Categories */
-.categories{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
-}
-.category{
-  background:#ffe1ec;
-  padding:12px 25px;
-  border-radius:30px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
+.categories{display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-bottom:40px;}
+.category{background:#ffe1ec; padding:12px 25px; border-radius:30px; font-weight:500; box-shadow:0 5px 12px rgba(0,0,0,0.1); cursor:pointer; transition:0.3s;}
+.category:hover{transform:translateY(-5px); background:#ffc0de;}
 
 /* Products */
-.products{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
-.product{
-  background:white;
-  border-radius:20px;
-  padding:15px;
-  box-shadow:0 10px 18px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-.product:hover{
-  transform:translateY(-8px);
-}
-.product img{
-  width:100%;
-  border-radius:15px;
-}
-.product h3{
-  margin:15px 0 5px;
-  color:#e85a8b;
-}
-.product p{
-  font-size:0.9em;
-}
-.product a{
-  display:inline-block;
-  margin-top:10px;
-  background:#e85a8b;
-  color:white;
-  padding:8px 20px;
-  border-radius:20px;
-  text-decoration:none;
-  font-size:0.9em;
-}
+.products{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin-top:20px;}
+.product{background:white; padding:25px; border-radius:25px; box-shadow:0 10px 20px rgba(0,0,0,0.1); transition:all 0.4s; position:relative;}
+.product:hover{transform:translateY(-10px) scale(1.03); box-shadow:0 15px 25px rgba(0,0,0,0.15);}
+.product h3{color:#e85a8b; margin-bottom:10px; font-size:1.3em;}
+.product p{color:#5c3a21; font-size:1em;}
+.product a{display:inline-block; margin-top:15px; background:#e85a8b; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; font-weight:500; transition:0.3s; position:relative;}
+.product a:hover{background:#c94873; box-shadow:0 0 15px #c94873; transform:scale(1.05);}
+.product a::after{content:"✨";position:absolute;top:-5px;right:-10px;font-size:1.2em;animation:twinkle 2s infinite;}
 
 /* Catalog */
-.catalog{
-  background:#fff0f6;
-  padding:45px;
-  border-radius:25px;
-  max-width:700px;
-  margin:auto;
-  box-shadow:0 10px 18px rgba(0,0,0,0.1);
-}
-.catalog a{
-  display:inline-block;
-  margin-top:20px;
-  background:#e85a8b;
-  color:white;
-  padding:12px 30px;
-  border-radius:30px;
-  text-decoration:none;
-}
-
-/* Instagram */
-.insta-grid{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:15px;
-}
-.insta-grid img{
-  width:100%;
-  border-radius:15px;
-  box-shadow:0 6px 12px rgba(0,0,0,0.15);
-}
+.catalog{background:#fff0f6; padding:40px; border-radius:25px; margin-top:30px; box-shadow:0 10px 20px rgba(0,0,0,0.1);}
+.catalog a{display:inline-block; margin-top:15px; background:#e85a8b; color:white; padding:12px 30px; border-radius:30px; text-decoration:none; transition:0.3s; position:relative;}
+.catalog a:hover{background:#c94873; box-shadow:0 0 15px #c94873; transform:scale(1.05);}
+.catalog a::after{content:"✨";position:absolute;top:-5px;right:-10px;font-size:1.2em;animation:twinkle 2s infinite;}
 
 /* Contact */
-.contact-box{
-  background:white;
-  max-width:500px;
-  margin:auto;
-  padding:30px;
-  border-radius:25px;
-  box-shadow:0 10px 18px rgba(0,0,0,0.1);
-}
-.contact-box p{
-  margin:10px 0;
-}
-.contact-box a{
-  display:inline-block;
-  margin-top:15px;
-  background:#25D366;
-  color:white;
-  padding:12px 30px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:500;
-}
+.contact-box{background:white; padding:30px; border-radius:25px; box-shadow:0 10px 20px rgba(0,0,0,0.1); max-width:500px; margin:auto;}
+.contact-box p{margin:10px 0; font-size:1.1em;}
+.contact-box a{display:inline-block; margin-top:15px; background:#25D366; color:white; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:500; transition:0.3s;}
+.contact-box a:hover{background:#1ebe5d; transform:scale(1.05);}
 
 /* Floating WhatsApp */
-.whatsapp-float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:50px;
-  text-decoration:none;
-  font-size:16px;
-  box-shadow:0 8px 15px rgba(0,0,0,0.3);
-  z-index:1000;
-}
+.whatsapp-float{position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:14px 18px; border-radius:50px; text-decoration:none; font-size:16px; box-shadow:0 8px 15px rgba(0,0,0,0.3); z-index:1000;}
+.whatsapp-float:hover{background:#1ebe5d; transform:scale(1.05);}
 
 /* Footer */
-footer{
-  background:#4a2c2a;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
+footer{background:#4b2e2e; color:white; text-align:center; padding:20px; margin-top:50px; border-radius:20px 20px 0 0;}
+footer a{color:#ffd6e7; text-decoration:none; margin:0 8px; transition:0.3s;}
+footer a:hover{color:white;}
+
+/* Floating sparkles */
+.sparkle{position:absolute;width:6px;height:6px;background:gold;border-radius:50%;opacity:0.8; animation:float 5s infinite;}
+@keyframes float{0%{transform:translateY(0) translateX(0);}50%{transform:translateY(-30px) translateX(20px);}100%{transform:translateY(0) translateX(-20px);}}
 </style>
 </head>
-
 <body>
 
+<!-- Header -->
 <header class="fade-up">
-  <h1>Resinova Jewelry ✨</h1>
-  <p>Handmade resin art made with love 💕</p>
+  <h1>Resinova Jewelry</h1>
+  <p>Handmade resin art crafted with love & care to make you shine 💖</p>
 </header>
 
+<!-- Hero -->
+<div class="hero fade-up">
+  <h2>Elegant & Unique Handmade Jewelry</h2>
+  <p>Each piece is created with passion, care, and a touch of magic ✨</p>
+  <div class="sparkle" style="top:10%; left:20%;"></div>
+  <div class="sparkle" style="top:40%; left:80%;"></div>
+  <div class="sparkle" style="top:70%; left:50%;"></div>
+</div>
+
+<!-- Categories -->
 <section class="fade-up">
   <h2>Categories</h2>
   <div class="categories">
-    <div class="category">💍 Rings</div>
-    <div class="category">✨ Earrings</div>
-    <div class="category">🔑 Keychains</div>
-    <div class="category">🏠 Home Decor</div>
+    <div class="category" onclick="filterProducts('all')">All</div>
+    <div class="category" onclick="filterProducts('ring')">💍 Rings</div>
+    <div class="category" onclick="filterProducts('earring')">✨ Earrings</div>
+    <div class="category" onclick="filterProducts('keychain')">🔑 Keychains</div>
+    <div class="category" onclick="filterProducts('decor')">🏠 Home Decor</div>
   </div>
 </section>
 
+<!-- Products -->
 <section class="fade-up">
   <h2>Our Collection</h2>
   <div class="products">
-    <div class="product">
-      <img src="images/product1.jpg">
+    <div class="product ring">
       <h3>Floral Resin Ring</h3>
-      <p>PKR 1,500</p>
-      <a href="https://wa.me/c/923276132020" target="_blank">View on WhatsApp</a>
+      <p>Delicate handmade ring with real flowers inside resin. Perfect for gifts or daily wear.</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
     </div>
-    <div class="product">
-      <img src="images/product2.jpg">
+    <div class="product earring">
       <h3>Crystal Earrings</h3>
-      <p>PKR 2,000</p>
-      <a href="https://wa.me/c/923276132020" target="_blank">View on WhatsApp</a>
+      <p>Elegant earrings crafted from resin and crystal accents. Adds sparkle to your look.</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
     </div>
-    <div class="product">
-      <img src="images/product3.jpg">
+    <div class="product keychain">
       <h3>Custom Keychain</h3>
-      <p>PKR 900</p>
-      <a href="https://wa.me/c/923276132020" target="_blank">View on WhatsApp</a>
+      <p>Personalized keychains made with love. Great gift for loved ones or yourself!</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
+    </div>
+    <div class="product decor">
+      <h3>Resin Home Decor</h3>
+      <p>Beautiful resin decorations for home, unique and handcrafted with care.</p>
+      <a href="https://wa.me/923276132020" target="_blank">Order on WhatsApp 💬</a>
     </div>
   </div>
 </section>
 
+<!-- Catalog -->
 <section class="fade-up">
-  <h2>Instagram Gallery 📸</h2>
-  <div class="insta-grid">
-    <img src="images/insta1.jpg">
-    <img src="images/insta2.jpg">
-    <img src="images/insta3.jpg">
-    <img src="images/insta4.jpg">
-  </div>
-</section>
-
-<section class="fade-up">
-  <h2>Our Catalog 📘</h2>
+  <h2>Resinova Catalog 📘</h2>
   <div class="catalog">
-    <p>Explore our full Resinova collection 💖</p>
+    <p>Explore our complete handmade collection. Each piece is unique and carefully crafted 💖</p>
     <a href="https://wa.me/c/923276132020" target="_blank">Open WhatsApp Catalog</a>
   </div>
 </section>
 
+<!-- Contact -->
 <section class="fade-up">
   <h2>Contact Us</h2>
   <div class="contact-box">
-    <p><strong>📞 WhatsApp:</strong></p>
-    <p>+92 327 6132020</p>
+    <p>📞 WhatsApp: +92 327 6132020</p>
     <a href="https://wa.me/923276132020" target="_blank">Chat on WhatsApp 💬</a>
   </div>
 </section>
@@ -265,9 +158,28 @@ footer{
   <p>© 2026 Resinova Jewelry</p>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/923276132020" target="_blank">
-💬 Chat
-</a>
+<a class="whatsapp-float" href="https://wa.me/923276132020" target="_blank">💬 Chat</a>
 
+<script>
+// Category filter
+function filterProducts(category){
+  let products=document.querySelectorAll('.product');
+  products.forEach(p=>{
+    if(category=='all'){p.style.display='block';}
+    else if(p.classList.contains(category)){p.style.display='block';}
+    else{p.style.display='none';}
+  });
+}
+
+// Fade-up on scroll
+const fadeElements=document.querySelectorAll('.fade-up');
+window.addEventListener('scroll',()=>{
+  fadeElements.forEach(el=>{
+    const top=el.getBoundingClientRect().top;
+    const windowHeight=window.innerHeight;
+    if(top<windowHeight-50){el.classList.add('visible');}
+  });
+});
+</script>
 </body>
-      </html>
+</html>
